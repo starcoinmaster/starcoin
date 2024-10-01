@@ -21,21 +21,27 @@ function startFarming() {
     timeText.innerText = "Farming will be ended: 00:30";
     timeButton.disabled = true;
 
-    waterFill.style.height = "100%";
-    waterFill.style.transition = "height 30s linear";
+    waterFill.style.height = "100%"; // Start with full height
+    waterFill.style.transition = "height 30s linear"; // Full farming time
 
-    let countdown = 30;
+    let countdown = 30; // 30 seconds for farming
     countdownInterval = setInterval(() => {
         countdown--;
         timeText.innerText = `Farming will be ended: 00:${countdown < 10 ? "0" : ""}${countdown}`;
         if (countdown <= 0) {
             clearInterval(countdownInterval);
+            drainWater(); // Call to drain water
             timeText.innerText = "Claim Coins";
             timeText.style.color = "#ffcc00";
-            waterFill.style.height = "0";
             timeButton.disabled = false;
         }
     }, 1000);
+}
+
+function drainWater() {
+    // Start draining water over 2 seconds
+    waterFill.style.transition = "height 2s linear";
+    waterFill.style.height = "0"; // Drain the water
 }
 
 function claimCoins() {
@@ -52,6 +58,5 @@ function resetFarming() {
     timeButton.classList.remove("filled");
     timeText.innerText = "Start Farming";
     timeText.style.color = "#ffffff";
-    waterFill.style.transition = "none";
     timeButton.disabled = false;
 }
