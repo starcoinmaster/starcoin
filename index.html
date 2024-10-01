@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Game</title>
+    <link rel="stylesheet" href="tap.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="message-box">
+            Get ready for the big surprise 🎉
+        </div> <!-- Changed random message -->
+        <div class="user-info" id="user-info">user name: Loading...</div> <!-- To display user name -->
+        <div class="logo-container">
+            <img src="star.png" alt="Star Logo" class="logo-img">
+        </div>
+        <div class="coin-display">Coins: <span id="coin-count">0</span></div>
+        <div class="time-button-container">
+            <button class="time-button" id="time-button">
+                <div class="water-fill" id="water-fill"></div>
+                <span id="time-text">Start Farming</span>
+            </button>
+        </div>
+        <div class="menu-container">
+            <div class="round-box"></div>
+            <div class="menu">
+                <a href="index.html"><img src="tap.png" alt="Tap" class="menu-icon"></a>
+                <a href="friend.html"><img src="friend.png" alt="Friend" class="menu-icon"></a>
+                <a href="task.html"><img src="task.png" alt="Task" class="menu-icon"></a>
+                <a href="withdraw.html"><img src="withdraw.png" alt="Withdraw" class="menu-icon"></a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Function to get the username from the Telegram bot (mock implementation)
+        function getUserName() {
+            // This function should ideally call your backend to get the username
+            // For demonstration, we're using a static name
+            return "juwel"; // Replace with actual logic to retrieve username
+        }
+
+        // Function to load user data
+        function loadUserData() {
+            const userName = getUserName(); // Get the user name
+            const userInfoElement = document.getElementById("user-info");
+            userInfoElement.innerText = `user name: hello, ${userName}`; // Display the username
+
+            // Load coin count from local storage or set it to 0
+            const storedCoins = localStorage.getItem('coinCount');
+            if (storedCoins) {
+                document.getElementById("coin-count").innerText = storedCoins;
+            } else {
+                localStorage.setItem('coinCount', 0);
+            }
+        }
+
+        // Call loadUserData on page load
+        window.onload = loadUserData;
+    </script>
+</body>
+</html>

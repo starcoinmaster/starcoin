@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks</title>
+    <link rel="stylesheet" href="task.css">
+    <link rel="stylesheet" href="tap.css">
+    <!-- Include Swiper's CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="task-container">
+            <div class="task-header">
+                <img src="star.png" alt="Star Logo" class="star-logo">
+                <h2>See the tasks available</h2>
+                <p>We’ll reward you immediately with points after each task completion.</p>
+            </div>
+
+            <!-- Swiper Slider container for touch interaction -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <!-- Each task will be a swiper slide -->
+                    <div class="swiper-slide">
+                        <div class="task-item">
+                            <div class="task-info">
+                                <img src="x.png" alt="X Logo" class="task-icon">
+                                <div class="task-description">
+                                    <p>Follow Star's CEO on X</p>
+                                    <span>+ 90 str</span>
+                                </div>
+                            </div>
+                            <button class="claim-button">Claim</button>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="task-item">
+                            <div class="task-info">
+                                <img src="telegram.png" alt="Telegram Logo" class="task-icon">
+                                <div class="task-description">
+                                    <p>Subscribe to Star Telegram</p>
+                                    <span>+ 90 str</span>
+                                </div>
+                            </div>
+                            <button class="claim-button">Claim</button>
+                        </div>
+                    </div>
+
+                    <!-- Add more task slides as needed -->
+                </div>
+            </div>
+
+            <!-- Non-slider tasks -->
+            <div class="non-slider-tasks">
+                <div class="non-slider-task">
+                    <div class="task-info">
+                        <img src="instagram.png" alt="X Logo" class="task-icon">
+                        <div class="task-description">
+                            <p>Share Star on Instagram</p>
+                            <span>+ 50 str</span>
+                        </div>
+                    </div>
+                    <button class="claim-button">Claim</button>
+                </div>
+
+                <div class="non-slider-task">
+                    <div class="task-info">
+                        <img src="friend.png" alt="X Logo" class="task-icon">
+                        <div class="task-description">
+                            <p>Invite a friend to Star</p>
+                            <span>+ 100 str</span>
+                        </div>
+                    </div>
+                    <button class="claim-button">Claim</button>
+                </div>
+
+                <div class="non-slider-task">
+                    <div class="task-info">
+                        <img src="app.png" alt="X Logo" class="task-icon">
+                        <div class="task-description">
+                            <p>Rate Star on App Store</p>
+                            <span>+ 30 str</span>
+                        </div>
+                    </div>
+                    <button class="claim-button">Claim</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu section -->
+        <div class="menu-container">
+            <div class="round-box"></div>
+            <div class="menu">
+                <a href="index.html"><img src="tap.png" alt="Tap" class="menu-icon"></a>
+                <a href="friend.html"><img src="friend.png" alt="Friend" class="menu-icon"></a>
+                <a href="task.html"><img src="task.png" alt="Task" class="menu-icon"></a>
+                <a href="withdraw.html"><img src="withdraw.png" alt="Withdraw" class="menu-icon"></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper with touch gestures -->
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            direction: 'horizontal',
+            loop: true, // Enables infinite looping of tasks
+            slidesPerView: 1, // Show one task at a time
+            spaceBetween: 30, // Space between slides
+            autoplay: {
+                delay: 3000, // Auto-slide every 3 seconds
+                disableOnInteraction: false, // Don't stop autoplay when swiped
+            },
+            touchEventsTarget: 'container', // Enable touch-based sliding
+            grabCursor: true, // Shows grab cursor when hovered on desktop
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+    </script>
+</body>
+</html>
