@@ -41,7 +41,6 @@ body {
     text-align: left;
     font-style: italic;
     margin-top: 20px; /* Added margin */
-    
 }
 
 /* Star logo */
@@ -102,16 +101,15 @@ body {
     transform: translateX(-50%); /* Center the water fill */
 }
 
+/* Adjusting the text inside the time button */
+#time-text {
+    position: relative; /* Keep it in normal flow */
+    z-index: 2; /* Ensure text is on top of the water fill */
+}
+
 /* Button when filled */
 .time-button.filled {
     background-color: #0056b3; /* Darker blue when filled */
-}
-
-/* General styling for the button text */
-.time-button #time-text {
-    color: #ffffff; /* Default white text */
-    font-weight: bold;
-    font-size: 16px; /* Increased font size */
 }
 
 /* Change text to yellow when it's time to claim */
@@ -156,10 +154,4 @@ body {
 /* Countdown display hidden */
 .countdown {
     display: none; /* Removed from display */
-}
-.gift-img 
-{
-    width: 250px;
-    height: 250px;
-    background-color: transparent;
 }
